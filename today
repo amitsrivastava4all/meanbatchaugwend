@@ -1,0 +1,188 @@
+var a = 100;
+undefined
+a = "Amit";
+"Amit"
+typeof a;
+"string"
+a = 100;
+100
+typeof a;
+"number"
+x = 1000;
+1000
+x = true;
+true
+typeof a;
+"number"
+typeof x;
+"boolean"
+x = 1000;
+1000
+x=1000
+1000
+x = 1000/0;
+Infinity
+typeof x;
+"number"
+isFinite(x)?x:0
+0
+var a = 1000;
+undefined
+var b = "2000";
+undefined
+typeof a;
+"number"
+typeof b;
+"string"
+a + b
+"10002000"
+ a- b
+-1000
+a * b
+2000000
+a / b
+0.5
+2 ** 3
+8
+a + b
+"10002000"
+a + parseInt(b)
+3000
+parseInt("Amit")
+NaN
+typeof parseInt("Amit");
+"number"
+isNaN(parseInt("Amit"))
+true
+isNaN(parseInt("Amit"))?0:1
+0
+var a = "Hello";
+undefined
+a = 'Hello';
+"Hello"
+a = `lfkjsdfjl
+gdshgkjhds
+ghdfkjhg
+gdfhjk`
+"lfkjsdfjl
+gdshgkjhds
+ghdfkjhg
+gdfhjk"
+a;
+"lfkjsdfjl
+gdshgkjhds
+ghdfkjhg
+gdfhjk"
+a= 100
+100
+b = 200
+200
+console.log("A is "+a+" And B is "+b);
+VM1201:1 A is 100 And B is 200
+undefined
+console.log(`A is ${a} and B is ${b}`);
+VM1288:1 A is 100 and B is 200
+undefined
+true + true - false;
+2
+100 + true
+101
+var arr = [10,20,30,40,50];
+undefined
+typeof arr;
+"object"
+arr instanceof Array;
+true
+typeof Array;
+"function"
+var w = new Array();
+undefined
+w;
+[]
+var w = new Array(10,20,30,40);
+undefined
+w;
+(4) [10, 20, 30, 40]
+Array
+ƒ Array() { [native code] }
+sort
+VM1698:1 Uncaught ReferenceError: sort is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1698:1
+find
+ƒ find() { [native code] }
+console
+console {debug: ƒ, error: ƒ, info: ƒ, log: ƒ, warn: ƒ, …}
+window;
+Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
+window.Array
+ƒ Array() { [native code] }
+window.find
+ƒ find() { [native code] }
+window.console
+console {debug: ƒ, error: ƒ, info: ƒ, log: ƒ, warn: ƒ, …}
+typeof window;
+"object"
+window instanceof Window;
+true
+typeof Window;
+"function"
+window;
+Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
+window.console.log('Hello')
+VM2056:1 Hello
+undefined
+var arr = [10,20,30,40,50];
+undefined
+var map  = {'Shimla':10,'Delhi':30};
+undefined
+map.Shimla;
+10
+arr[0];
+10
+map['Shimla']
+10
+typeof map;
+"object"
+map instanceof Object;
+true
+typeof Object;
+"function"
+var f  = {};
+undefined
+typeof f;
+"object"
+f instanceof Object;
+true
+arr;
+(5) [10, 20, 30, 40, 50]
+arr instanceof Array;
+true
+arr instanceof Object;
+true
+f;
+{}
+f instanceof Array;
+false
+f instanceof Object;
+true
+var e = {id:1001 , name:'Ram'};
+undefined
+e.id;
+1001
+e.salary = 9999;
+9999
+e;
+{id: 1001, name: "Ram", salary: 9999}
+delete e.id;
+true
+e;
+{name: "Ram", salary: 9999}
+JSON.stringify(e);
+"{"name":"Ram","salary":9999}"
+var t =JSON.stringify(e);
+undefined
+typeof t;
+"string"
+JSON.parse(t);
+{name: "Ram", salary: 9999}
