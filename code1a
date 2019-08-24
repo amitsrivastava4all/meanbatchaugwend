@@ -1,0 +1,301 @@
+var a= 100;
+undefined
+++a;
+101
+var w = [10,20,30,40,50];
+undefined
+w++
+NaN
+var w = [10,20,30,40,50];
+undefined
+typeof w;
+"object"
+w instanceof Array;
+true
+typeof Array;
+"function"
+var obj = {id:1001, name:'Ram'};
+undefined
+typeof obj;
+"object"
+obj instanceof Object;
+true
+typeof Object;
+"function"
+JSON.stringify(obj);
+"{"id":1001,"name":"Ram"}"
+var x = JSON.stringify(obj);
+undefined
+typeof x;
+"string"
+var y = JSON.parse(x);
+undefined
+y;
+{id: 1001, name: "Ram"}
+typeof y;
+"object"
+var x = "Hello";
+undefined
+typeof x;
+"string"
+var y = new String("Hello");
+undefined
+typeof y;
+"object"
+y;
+String {"Hello"}
+x;
+"Hello"
+y.length;
+5
+y.toUpperCase();
+"HELLO"
+y.indexOf('e');
+1
+y.charAt(0);
+"H"
+y.substring(1);
+"ello"
+y.substring(1,2)
+"e"
+x;
+"Hello"
+y;
+String {"Hello"}
+x.toUpperCase();
+"HELLO"
+var t = 1000;
+undefined
+typeof t;
+"number"
+var bb = new Number(1000);
+undefined
+bb;
+Number {1000}
+typeof bb;
+"object"
+var cc = new Number(2000);
+undefined
+bb;
+Number {1000}
+cc;
+Number {2000}
+bb + cc;
+3000
+var b = 2000.20;
+undefined
+b.toPrecision();
+"2000.2"
+b.toFixed();
+"2000"
+var bb = new Number("109abcd")
+undefined
+bb;
+Number {NaN}
+bb.toFixed()
+"NaN"
+var bb = new Number("abcd")
+undefined
+bb;
+Number {NaN}
+var x= new String("1234");
+undefined
+x;
+String {"1234"}
+var x= new String(434534);
+undefined
+x;
+String {"434534"}
+var obj = {id:1001, name:'Ram'};
+undefined
+console.log('Obj is ', obj);
+VM2034:1 Obj is  {id: 1001, name: "Ram"}
+undefined
+console.log('Obj is '+ obj);
+VM2056:1 Obj is [object Object]
+undefined
+console.log('Obj is '+ obj.toString());
+VM2106:1 Obj is [object Object]
+undefined
+typeof JSON;
+"object"
+JSON.stringify(obj);
+"{"id":1001,"name":"Ram"}"
+obj;
+{id: 1001, name: "Ram"}
+obj.toString();
+"[object Object]"
+var obj = {id:1001, name:'Ram',toString(){
+return "Id "+obj.id+" Name "+obj.name;
+}};
+undefined
+obj.toString();
+"Id 1001 Name Ram"
+console.log('Obj is '+obj);
+VM2480:1 Obj is Id 1001 Name Ram
+undefined
+var obj = {id:1001, name:'Ram',print(){
+return "Id "+obj.id+" Name "+obj.name;
+}};
+undefined
+obj.print()
+"Id 1001 Name Ram"
+console.log('Obj is '+obj);
+VM2725:1 Obj is [object Object]
+undefined
+console.log('Obj is '+obj.print());
+VM2757:1 Obj is Id 1001 Name Ram
+undefined
+function show(){
+console.log("I am Show ");
+}
+undefined
+var m = show;  
+undefined
+m;
+ƒ show(){
+console.log("I am Show ");
+}
+typeof show;
+"function"
+typeof m;
+"function"
+show();
+VM2823:2 I am Show 
+undefined
+m();
+VM2823:2 I am Show 
+undefined
+function add(x, y){
+return x + y;
+}
+undefined
+add (100,200);
+300
+var m = show;
+undefined
+var m2 = show();
+VM2823:2 I am Show 
+undefined
+m2;
+undefined
+m;
+ƒ show(){
+console.log("I am Show ");
+}
+function loop(fn){ 
+for(let i = 1; i<=10; i++){
+fn(i);
+/*if(choice ==1){
+evenOdd(i);
+}
+else
+if(choice ==2){
+cube(i);
+}
+}*/
+}
+function evenOdd(num){
+console.log(num%2==0?'Even No'+num:'Odd No '+num);
+}
+function cube(num){
+console.log(num**3);
+}
+loop(evenOdd);
+console.log("*********************");
+loop(cube);
+VM3881:21 Uncaught SyntaxError: Unexpected end of input
+function loop(fn){ 
+for(let i = 1; i<=10; i++){
+fn(i);
+/*if(choice ==1){
+evenOdd(i);
+}
+else
+if(choice ==2){
+cube(i);
+}
+}*/
+}
+}
+function evenOdd(num){
+console.log(num%2==0?'Even No'+num:'Odd No '+num);
+}
+function cube(num){
+console.log(num**3);
+}
+loop(evenOdd);
+console.log("*********************");
+loop(cube);
+VM3888:15 Odd No 1
+VM3888:15 Even No2
+VM3888:15 Odd No 3
+VM3888:15 Even No4
+VM3888:15 Odd No 5
+VM3888:15 Even No6
+VM3888:15 Odd No 7
+VM3888:15 Even No8
+VM3888:15 Odd No 9
+VM3888:15 Even No10
+VM3888:21 *********************
+VM3888:18 1
+VM3888:18 8
+VM3888:18 27
+VM3888:18 64
+VM3888:18 125
+VM3888:18 216
+VM3888:18 343
+VM3888:18 512
+VM3888:18 729
+VM3888:18 1000
+undefined
+loop(cube);
+VM3888:18 1
+VM3888:18 8
+VM3888:18 27
+VM3888:18 64
+VM3888:18 125
+VM3888:18 216
+VM3888:18 343
+VM3888:18 512
+VM3888:18 729
+VM3888:18 1000
+undefined
+add;
+ƒ add(x, y){
+return x + y;
+}
+function User(){
+function add(){
+console.log("User Add ");
+}
+}
+undefined
+function User(){
+function add(){
+console.log("User Add ");
+}
+return add;
+}
+undefined
+add(10,20);
+30
+var m = User();
+undefined
+m();
+VM4099:3 User Add 
+undefined
+User()();
+VM4099:3 User Add 
+undefined
+var m = User();
+undefined
+typeof m;
+"function"
+m;
+ƒ add(){
+console.log("User Add ");
+}
+m();
+VM4099:3 User Add 
+undefined
