@@ -1,0 +1,342 @@
+function Calc(){
+function add(x,y){
+return x + y;
+}
+function sub(x, y){
+return x - y;
+}
+return [add, sub];
+}
+undefined
+var m  = Calc();
+undefined
+m;
+(2) [ƒ, ƒ]
+m[0];
+ƒ add(x,y){
+return x + y;
+}
+m[1]
+ƒ sub(x, y){
+return x - y;
+}
+m[0](100,200);
+300
+Calc()[0](100,200);
+300
+function Calc(x,y){
+function add(){
+return x + y;
+}
+function sub(){
+return x - y;
+}
+return [add, sub];
+}
+undefined
+var m = Calc(100,200);
+undefined
+m[0]()
+300
+m;
+(2) [ƒ, ƒ]0: ƒ add()1: ƒ sub()length: 2__proto__: Array(0)
+function Calc(x,y){
+function add(){
+return x + y;
+}
+function sub(){
+return x - y;
+}
+return {'addition':add,'subtract':sub};
+}
+undefined
+var obj = Calc(100,200);
+undefined
+obj;
+{addition: ƒ, subtract: ƒ}
+obj.addition();
+300
+function Calc(x,y){
+function add(){
+return x + y;
+}
+function sub(){
+return x - y;
+}
+return {add,sub};
+}
+undefined
+var m =Calc(1000,2000);
+undefined
+m.add();
+3000
+m.sub();
+-1000
+show();
+VM1156:1 Uncaught ReferenceError: show is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1156:1
+show();
+function show(){
+console.log("I am Show ");
+}
+VM1295:3 I am Show 
+undefined
+disp();
+var disp= function(){
+console.log("I am a Function Expression");
+}
+VM1406:1 Uncaught TypeError: disp is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM1406:1
+function Calc(x,y){
+var add=function(){
+return x + y;
+}
+var sub=function(){
+return x - y;
+}
+return [add,sub];
+}
+undefined
+var m =Calc(100,200);
+undefined
+m;
+(2) [ƒ, ƒ]0: ƒ ()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM1457:2[[Scopes]]: Scopes[2]1: ƒ ()length: 2__proto__: Array(0)
+m[0]();
+300
+function Calc(x,y){
+var add=function(){
+return x + y;
+}
+var sub=function(){
+return x - y;
+}
+return {add, sub};
+}
+undefined
+var m = Calc(100,20);
+undefined
+m;
+{add: ƒ, sub: ƒ}
+m.add();
+120
+function Calc(x,y){
+var add=function add(){
+return x + y;
+}
+var sub=function sub(){
+return x - y;
+}
+return [add, sub];
+}
+undefined
+var m = Calc(100,20);
+undefined
+m;
+(2) [ƒ, ƒ]0: ƒ add()1: ƒ sub()length: 2__proto__: Array(0)
+var add = (x,y)=>x+y;
+undefined
+typeof add;
+"function"
+add(100,200);
+300
+var cube = num=>num**3;
+undefined
+cube(3);
+27
+function loop(fn){ 
+for(let i = 1; i<=10; i++){
+fn(i);
+}
+}
+
+undefined
+loop(num=>console.log(num**3));
+VM2220:1 1
+VM2220:1 8
+VM2220:1 27
+VM2220:1 64
+VM2220:1 125
+VM2220:1 216
+VM2220:1 343
+VM2220:1 512
+VM2220:1 729
+VM2220:1 1000
+undefined
+var add = (x,y)=>{
+x = x + y ;
+y = y + x;
+return x + y;
+}
+undefined
+add(1,2);
+8
+var arr = [1,2,390,99,22];
+undefined
+arr.push(1000);
+6
+arr;
+(6) [1, 2, 390, 99, 22, 1000]
+arr.pop();
+1000
+arr;
+(5) [1, 2, 390, 99, 22]
+arr.splice(1,1)
+[2]
+arr;
+(4) [1, 390, 99, 22]
+arr.splice(1,2);
+(2) [390, 99]
+arr;
+(2) [1, 22]
+arr.length =0
+0
+arr;
+[]
+var arr = [1,2,390,99,22];
+undefined
+arr=[];
+[]
+arr;
+[]
+var arr = [1,2,390,99,22];
+undefined
+arr.length
+5
+arr.length=2
+2
+arr;
+(2) [1, 2]
+var arr = [1,2,390,99,22];
+undefined
+arr.splice(0);
+(5) [1, 2, 390, 99, 22]
+arr;
+[]
+var arr = [1,2,390,99,22];
+undefined
+arr[0]=10000;
+10000
+arr;
+(5) [10000, 2, 390, 99, 22]
+var t = [10,20];
+undefined
+var k = [arr,t];
+undefined
+k;
+(2) [Array(5), Array(2)]0: (5) [10000, 2, 390, 99, 22]1: (2) [10, 20]length: 2__proto__: Array(0)
+var k = [...arr,...t];
+undefined
+k;
+(7) [10000, 2, 390, 99, 22, 10, 20]
+k[0] = 1;
+1
+k;
+(7) [1, 2, 390, 99, 22, 10, 20]
+arr;
+(5) [10000, 2, 390, 99, 22]
+var m = [arr,t];
+undefined
+arr;
+(5) [10000, 2, 390, 99, 22]
+m;
+(2) [Array(5), Array(2)]0: (5) [10000, 2, 390, 99, 22]1: (2) [10, 20]length: 2__proto__: Array(0)
+m[0][0]= 999;
+999
+m[0];
+(5) [999, 2, 390, 99, 22]
+arr;
+(5) [999, 2, 390, 99, 22]
+arr;
+(5) [999, 2, 390, 99, 22]
+for(let i = 0; i<arr.length; i++){
+console.log('Arr is ',arr[i]);
+}
+VM3458:2 Arr is  999
+VM3458:2 Arr is  2
+VM3458:2 Arr is  390
+VM3458:2 Arr is  99
+VM3458:2 Arr is  22
+undefined
+for(let ele of arr){
+console.log(ele);
+}
+VM3533:2 999
+VM3533:2 2
+VM3533:2 390
+VM3533:2 99
+VM3533:2 22
+undefined
+arr.forEach(ele=>console.log(ele));
+VM3640:1 999
+VM3640:1 2
+VM3640:1 390
+VM3640:1 99
+VM3640:1 22
+undefined
+arr.forEach((ele,index)=>console.log(ele, " " ,index));
+VM3743:1 999 " " 0
+VM3743:1 2 " " 1
+VM3743:1 390 " " 2
+VM3743:1 99 " " 3
+VM3743:1 22 " " 4
+undefined
+arr;
+(5) [999, 2, 390, 99, 22]
+arr.find(ele=>ele==390);
+390
+arr.find(ele=>ele==390000);
+undefined
+arr.findIndex(ele=>ele==390000);
+-1
+arr.findIndex(ele=>ele==390);
+2
+arr;
+(5) [999, 2, 390, 99, 22]
+arr.push(390);
+6
+arr.push(390);
+7
+arr;
+(7) [999, 2, 390, 99, 22, 390, 390]
+arr.findIndex(ele=>ele==390);
+2
+arr.filter(ele=>ele==390);
+(3) [390, 390, 390]
+arr.find(ele=>ele==390);
+390
+arr.filter(ele=>ele==390).length;
+3
+arr = arr.filter(ele=>ele!=390)
+(4) [999, 2, 99, 22]
+arr;
+(4) [999, 2, 99, 22]
+arr;
+(4) [999, 2, 99, 22]
+arr.map(ele=>" $"+ele+".00");
+(4) [" $999.00", " $2.00", " $99.00", " $22.00"]
+arr;
+(4) [999, 2, 99, 22]
+arr.map(ele=>ele+20);
+(4) [1019, 22, 119, 42]
+arr.map(ele=>ele+20).forEach(ele=>console.log('With Tax',ele));
+VM4401:1 With Tax 1019
+VM4401:1 With Tax 22
+VM4401:1 With Tax 119
+VM4401:1 With Tax 42
+undefined
+var j = [10,20,30,40,54,70];
+undefined
+var m = j.filter(j=>true);
+undefined
+m;
+(6) [10, 20, 30, 40, 54, 70]
+var m = j.map(j=>j);
+undefined
+m;
+(6) [10, 20, 30, 40, 54, 70]
+var m = j.map(j=>j**3);
+undefined
+m;
+(6) [1000, 8000, 27000, 64000, 157464, 343000]
