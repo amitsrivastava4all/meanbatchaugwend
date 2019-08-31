@@ -1,0 +1,193 @@
+var arr = [20, 90 , 44, 1, 12, 32];
+undefined
+arr.sort((a,b)=>a-b);
+(6) [1, 12, 20, 32, 44, 90]
+arr.sort((a,b)=>b -a);
+(6) [90, 44, 32, 20, 12, 1]
+"ram"-"ramesh"
+NaN
+"ram".localeCompare("ramesh")
+-1
+"ram".localeCompare("raj");
+1
+"ram".localeCompare("ram");
+0
+var names = ["ram","raj","anil","tim","shyam"];
+undefined
+names.sort((a,b)=>a.localeCompare(b));
+(5) ["anil", "raj", "ram", "shyam", "tim"]
+names.sort((a,b)=>b.localeCompare(a));
+(5) ["tim", "shyam", "ram", "raj", "anil"]
+var arr = [20, 90 , 44, 1, 12, 32];
+undefined
+arr.reduce((acc,ele)=>acc+=ele,acc=0)
+199
+arr.reduce((acc,ele)=>{
+if(ele>acc){
+return acc;
+}
+},acc=arr[0])
+undefined
+arr.reduce((acc,ele)=>{
+if(ele>acc){
+acc = ele;
+}
+return acc;
+},acc=arr[0])
+90
+var arr = [20, 90 , 44, 90, 90, 32];
+undefined
+arr.filter(ele=>ele==90);
+(3) [90, 90, 90]
+arr.reduce((acc,ele)=>{
+if(ele==90){
+acc.push(ele);
+}
+return acc;
+},acc=[])
+(3) [90, 90, 90]
+arr.reduce((acc,ele)=>{
+
+acc.push("Rs "+ele+".00");
+
+return acc;
+},acc=[])
+(6) ["Rs 20.00", "Rs 90.00", "Rs 44.00", "Rs 90.00", "Rs 90.00", "Rs 32.00"]
+arr.reduce((acc,ele)=>{
+
+acc.push(`Rs ${ele}.00`);
+
+return acc;
+},acc=[])
+(6) ["Rs 20.00", "Rs 90.00", "Rs 44.00", "Rs 90.00", "Rs 90.00", "Rs 32.00"]
+a=100;
+100
+b =200;
+200
+`A is ${(a+b)}`
+"A is 300"
+arr;
+(6) [20, 90, 44, 90, 90, 32]
+arr.splice(1,1);
+[90]
+arr;
+(5) [20, 44, 90, 90, 32]
+var obj = {id:1001, name:'Ram',salary:9999};
+undefined
+var temp = [22334,5656,666,777,333];
+undefined
+var temp = {'ram':22334,'shyam':5656};
+undefined
+temp['ram']
+22334
+temp.ram;
+22334
+var temp = {1:22334,2:5656};
+undefined
+temp.1;
+VM1863:1 Uncaught SyntaxError: Unexpected number
+temp[1]
+22334
+var temp = {'a b':22334,2:5656};
+undefined
+temp.a b
+VM1929:1 Uncaught SyntaxError: Unexpected identifier
+temp['a b']
+22334
+var obj = {};
+undefined
+obj.id = 1001;
+1001
+obj.name = "Ram";
+"Ram"
+obj;
+{id: 1001, name: "Ram"}
+obj.salary = 8888;
+8888
+obj;
+{id: 1001, name: "Ram", salary: 8888}
+delete obj.name;
+true
+obj;
+{id: 1001, salary: 8888}
+typeof obj;
+"object"
+obj instanceof Object;
+true
+typeof Object;
+"function"
+var ram = {};
+undefined
+ram.id = 1001;
+1001
+var ram = {id:1001};
+undefined
+function createObject(id, name, salary){
+var obj = {};
+obj.id = id;
+obj.name = name;
+obj.salary= salary;
+return obj;
+}
+undefined
+var ram = createObject(1001, "Ram",9999);
+undefined
+ram;
+{id: 1001, name: "Ram", salary: 9999}
+var shyam = createObject(1002, "Ram");
+undefined
+shyam;
+{id: 1002, name: "Ram", salary: undefined}
+function createObject(id, name, salary=0){
+var obj = {};
+obj.id = id;
+obj.name = name;
+obj.salary= salary;
+return obj;
+}
+undefined
+var shyam = createObject(1002, "Shyam");
+undefined
+shyam;
+{id: 1002, name: "Shyam", salary: 0}
+ram;
+{id: 1001, name: "Ram", salary: 9999}
+shyam;
+{id: 1002, name: "Shyam", salary: 0}
+ram instanceof Object;
+true
+function Employee(id, name, salary){
+//var this = {};
+this.id = id;
+this.name = name;
+this.salary = salary;
+// return this;
+
+}
+var ram = new Employee(1001, "Ram",9999);
+undefined
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999}
+obj;
+{id: 1001, salary: 8888}
+ram instanceof Employee;
+true
+obj instanceof createObject;
+false
+typeof Employee;
+"function"
+typeof ram;
+"object"
+console.dir(Employee);
+VM3346:1 ƒ Employee(id, name, salary)arguments: nullcaller: nulllength: 3name: "Employee"prototype: constructor: ƒ Employee(id, name, salary)__proto__: Object__proto__: ƒ ()[[FunctionLocation]]: VM3136:1[[Scopes]]: Scopes[1]
+undefined
+function show(){
+}
+undefined
+console.log(show);
+VM3441:1 ƒ show(){
+}
+undefined
+console.dir(show);
+VM3450:1 ƒ show()arguments: nullcaller: nulllength: 0name: "show"prototype: {constructor: ƒ}__proto__: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()__proto__: Object[[FunctionLocation]]: <unknown>[[Scopes]]: Scopes[0][[FunctionLocation]]: VM3393:1[[Scopes]]: Scopes[1]
+undefined
