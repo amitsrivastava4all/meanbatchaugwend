@@ -1,0 +1,240 @@
+function test(){
+console.log("I am Test ");
+}
+undefined
+console.dir(test);
+VM1389:1 ƒ test()arguments: nullcaller: nulllength: 0name: "test"prototype: {constructor: ƒ}__proto__: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()__proto__: Object[[FunctionLocation]]: <unknown>[[Scopes]]: Scopes[0][[FunctionLocation]]: VM1337:1[[Scopes]]: Scopes[1]
+undefined
+show.bind
+VM1458:1 Uncaught ReferenceError: show is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1458:1
+test.bind
+ƒ bind() { [native code] }
+test.apply
+ƒ apply() { [native code] }
+test.call
+ƒ call() { [native code] }
+console.dir(test);
+VM1555:1 ƒ test()arguments: nullcaller: nulllength: 0name: "test"prototype: constructor: ƒ test()__proto__: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()__proto__: ƒ ()[[FunctionLocation]]: VM1337:1[[Scopes]]: Scopes[1]
+undefined
+test();
+VM1337:2 I am Test 
+undefined
+var r= new test();
+VM1337:2 I am Test 
+undefined
+typeof r;
+"object"
+r;
+test {}
+r instanceof test;
+true
+typeof Object
+"function"
+console.dir(Object);
+VM1738:1 ƒ Object()arguments: (...)assign: ƒ assign()caller: (...)create: ƒ create()defineProperties: ƒ defineProperties()defineProperty: ƒ defineProperty()entries: ƒ entries()freeze: ƒ freeze()fromEntries: ƒ fromEntries()getOwnPropertyDescriptor: ƒ getOwnPropertyDescriptor()getOwnPropertyDescriptors: ƒ getOwnPropertyDescriptors()getOwnPropertyNames: ƒ getOwnPropertyNames()getOwnPropertySymbols: ƒ getOwnPropertySymbols()getPrototypeOf: ƒ getPrototypeOf()is: ƒ is()isExtensible: ƒ isExtensible()isFrozen: ƒ isFrozen()isSealed: ƒ isSealed()keys: ƒ keys()length: 1name: "Object"preventExtensions: ƒ preventExtensions()prototype: {constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}seal: ƒ seal()setPrototypeOf: ƒ setPrototypeOf()values: ƒ values()__proto__: ƒ ()[[Scopes]]: Scopes[0]
+undefined
+function Employee(id , name, basicSalary){
+this.id = id;  // Instance Var =  Local Var
+this.name = name;
+this.basicSalary = basicSalary;
+this.hra = function(){
+x = 10
+return this.basicSalary * 0.30;
+}
+// return this;
+}
+var ram = new Employee(1001,"Ram",9999);
+undefined
+function Employee(id , name, basicSalary){
+this.id = id;  // Instance Var =  Local Var
+this.name = name;
+this.basicSalary = basicSalary;
+this.hra = function(){
+let x = 10;
+x++;
+return this.basicSalary * 0.30;
+}
+// return this;
+}
+var ram = new Employee(1001,"Ram",9999);
+undefined
+function  show(){
+var x = 100;
+disp();
+console.log(" i am show "+x+" "+z);
+}
+function disp(){
+var z = 200;
+console.log(" i am Disp "+z);
+}
+show();
+VM2467:8  i am Disp 200
+VM2467:4 Uncaught ReferenceError: z is not defined
+    at show (<anonymous>:4:33)
+    at <anonymous>:10:1
+show @ VM2467:4
+(anonymous) @ VM2467:10
+function Employee(id , name, basicSalary){
+this.id = id;  // Instance Var =  Local Var
+this.name = name;
+this.basicSalary = basicSalary;
+this.hra = function(){
+let x = 10;
+x++;
+return this.basicSalary * 0.30;
+}
+// return this;
+}
+var ram = new Employee(1001,"Ram",9999);
+undefined
+ram;
+Employee {id: 1001, name: "Ram", basicSalary: 9999, hra: ƒ}
+ram.hra();
+2999.7
+ram.id;
+1001
+var shyam = new Employee(1002, "Shyam",88888);
+undefined
+shyam;
+Employee {id: 1002, name: "Shyam", basicSalary: 88888, hra: ƒ}
+ram;
+Employee {id: 1001, name: "Ram", basicSalary: 9999, hra: ƒ}
+function Employee(id , name, basicSalary){
+this.id = id;  // Instance Var =  Local Var
+this.name = name;
+this.basicSalary = basicSalary;
+/*this.hra = function(){
+let x = 10;
+x++;
+return this.basicSalary * 0.30;
+}*/
+// return this;
+}
+var ram = new Employee(1001,"Ram",9999);
+undefined
+ram;
+Employee {id: 1001, name: "Ram", basicSalary: 9999}basicSalary: 9999id: 1001name: "Ram"__proto__: Object
+Employee.prototype.hra = function(){
+return this.basicSalary * 0.30;
+}
+ƒ (){
+return this.basicSalary * 0.30;
+}
+var ram = new Employee(1001, "Ram",9999);
+undefined
+var shyam= new Employee(1002, "Shyam",4444);
+undefined
+ram ;
+Employee {id: 1001, name: "Ram", basicSalary: 9999}basicSalary: 9999id: 1001name: "Ram"__proto__: hra: ƒ ()constructor: ƒ Employee(id , name, basicSalary)__proto__: Object
+shyam;
+Employee {id: 1002, name: "Shyam", basicSalary: 4444}
+ram.hra();
+2999.7
+Employee.prototype.hra = function(){
+return this.basicSalary * 0.30;
+}
+ƒ (){
+return this.basicSalary * 0.30;
+}
+Employee.prototype.da = function(){
+return this.basicSalary * 0.20;
+}
+ƒ (){
+return this.basicSalary * 0.20;
+}
+Employee.prototype.ta = function(){
+return this.basicSalary * 0.10;
+}
+ƒ (){
+return this.basicSalary * 0.10;
+}
+Employee.prototype.pf = function(){
+return this.basicSalary * 0.05;
+}
+ƒ (){
+return this.basicSalary * 0.05;
+}
+Employee.prototype.gs = function(){
+return this.basicSalary + this.hra() + this.da() + this.ta() - this.pf();
+}
+ƒ (){
+return this.basicSalary + this.hra() + this.da() + this.ta() - this.pf();
+}
+Employee.prototype.ns = function(){
+return this.gs() - (this.gs() * 0.10);
+}
+ƒ (){
+return this.gs() - (this.gs() * 0.10);
+}
+Employee.prototype.print = function(){
+console.log(`Id is ${this.id}
+}
+VM3350:3 Uncaught SyntaxError: Unexpected end of input
+Employee.prototype.print = function(){
+console.log(`
+Id is ${this.id}
+Name is ${this.name}
+Basic Salary is ${this.basicSalary}
+HRA is ${this.hra()}
+DA is ${this.da()}
+TA is ${this.ta()}
+PF is ${this.pf()}
+GS is ${this.gs()}
+NS is ${this.ns()}`);
+
+}
+ƒ (){
+console.log(`
+Id is ${this.id}
+Name is ${this.name}
+Basic Salary is ${this.basicSalary}
+HRA is ${this.hra()}
+DA is ${this.da()}
+TA is ${this.ta()}
+PF is ${this.pf()}
+GS is ${this.gs()}
+NS is ${th…
+var ram = new Employee(1001, "Ram",9999);
+undefined
+ram.print();
+VM3528:2 
+Id is 1001
+Name is Ram
+Basic Salary is 9999
+HRA is 2999.7
+DA is 1999.8000000000002
+TA is 999.9000000000001
+PF is 499.95000000000005
+GS is 15498.449999999999
+NS is 13948.605
+undefined
+ram;
+Employee {id: 1001, name: "Ram", basicSalary: 9999}basicSalary: 9999id: 1001name: "Ram"__proto__: da: ƒ ()gs: ƒ ()hra: ƒ ()ns: ƒ ()pf: ƒ ()print: ƒ ()ta: ƒ ()constructor: ƒ Employee(id , name, basicSalary)__proto__: Object
+class Customer{
+constructor(id , name, balance){
+this.id = id;
+this.name  = name;
+this.balance = balance;
+}
+show(){
+console.log(" I am Show "+this.id +" " + this.name);
+}
+}
+undefined
+var ram = new Customer(1001, "Ram", 9999);
+undefined
+ram;
+Customer {id: 1001, name: "Ram", balance: 9999}balance: 9999id: 1001name: "Ram"__proto__: constructor: class Customershow: ƒ show()__proto__: Object
+typeof Customer;
+"function"
+ram.print();
+VM4152:1 Uncaught TypeError: ram.print is not a function
+    at <anonymous>:1:5
+(anonymous) @ VM4152:1
+ram.show();
+VM3929:8  I am Show 1001 Ram
+undefined
+ram;
+Customer {id: 1001, name: "Ram", balance: 9999}
