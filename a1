@@ -1,0 +1,122 @@
+var arr = [10,20,30,40,50];
+undefined
+for(let i = 0 ; i<arr.length; i++){
+console.log(arr[i]);
+}
+VM307:2 10
+VM307:2 20
+VM307:2 30
+VM307:2 40
+VM307:2 50
+undefined
+for(let i of arr){
+console.log(i);
+}
+VM451:2 10
+VM451:2 20
+VM451:2 30
+VM451:2 40
+VM451:2 50
+undefined
+function printIt(ele){
+console.log("Ele is ",ele);
+}
+arr.forEach(printIt);
+VM592:2 Ele is  10
+VM592:2 Ele is  20
+VM592:2 Ele is  30
+VM592:2 Ele is  40
+VM592:2 Ele is  50
+undefined
+var pr = ele=>console.log('Arrow ',ele);
+undefined
+arr.forEach(ele=>console.log(ele));
+VM796:1 10
+VM796:1 20
+VM796:1 30
+VM796:1 40
+VM796:1 50
+undefined
+class Question{
+    constructor(id, name, optionA,optionB, optionC,optionD,rans,score){
+        this.id = id;
+        this.name =name;
+        this.optionA = optionA;
+        this.optionB = optionB;
+        this.optionC = optionC;
+        this.optionD = optionD;
+        this.rans = rans;
+        this.score = score;
+    }
+}
+undefined
+var obj = new Question();
+undefined
+obj;
+Question {id: undefined, name: undefined, optionA: undefined, optionB: undefined, optionC: undefined, …}
+obj.id;
+undefined
+obj['id'];
+undefined
+var myid='id';
+undefined
+obj[myid];
+undefined
+obj;
+Question {id: undefined, name: undefined, optionA: undefined, optionB: undefined, optionC: undefined, …}
+obj.id = 1001;
+1001
+obj;
+Question {id: 1001, name: undefined, optionA: undefined, optionB: undefined, optionC: undefined, …}
+obj.id;
+1001
+obj['id']
+1001
+obj[myid];
+1001
+obj.11111=9999;
+VM1241:1 Uncaught SyntaxError: Unexpected number
+obj = {1111:222,id:999};
+{1111: 222, id: 999}
+obj.id;
+999
+obj.1111;
+VM1335:1 Uncaught SyntaxError: Unexpected number
+obj[1111];
+222
+obj = {1111:222,id:999 'm q':88888};
+VM1383:1 Uncaught SyntaxError: Unexpected string
+obj = {1111:222,id:999, 'm q':88888};
+{1111: 222, id: 999, m q: 88888}
+obj.['m q']
+VM1442:1 Uncaught SyntaxError: Unexpected token [
+obj['m q']
+88888
+var obj = new Question();
+undefined
+for(let mykey in obj){
+console.log(mykey);
+}
+VM1617:2 id
+VM1617:2 name
+VM1617:2 optionA
+VM1617:2 optionB
+VM1617:2 optionC
+VM1617:2 optionD
+VM1617:2 rans
+VM1617:2 score
+undefined
+for(let mykey in obj){
+console.log(mykey+ " " + obj[mykey]);
+}
+VM1659:2 id undefined
+VM1659:2 name undefined
+VM1659:2 optionA undefined
+VM1659:2 optionB undefined
+VM1659:2 optionC undefined
+VM1659:2 optionD undefined
+VM1659:2 rans undefined
+VM1659:2 score undefined
+undefined
+var id = 11;
+undefined
