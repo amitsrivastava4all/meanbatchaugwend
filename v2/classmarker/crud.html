@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRUD Teacher</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/design.css">
+    <script src="js/teachers/models/question.js"></script>
+    <script src="js/teachers/models/questionoperations.js"></script>
+    <script src="js/teachers/controllers/ctrl.js"></script>
+</head>
+<body>
+    <div class='container'>
+        <h1 class='alert-success text-center'>Question CRUD</h1>
+        <div class='form-group'>
+            <label for="">Id</label>
+            <input id="id" class='form-control' type="text" placeholder="Type Question Id">
+        </div>
+        <div class='form-group'>
+            <label for="">Name</label>
+           <textarea id="name" class='form-control' cols="30" rows="5" placeholder="Type Question Name Here"></textarea>
+        </div>
+        <div class='form-group'>
+            <label for="">OptionA</label>
+            <input id="optionA" class='form-control' type="text" placeholder="Type OptionA">
+        </div>
+        <div class='form-group'>
+            <label for="">OptionB</label>
+            <input id="optionB" class='form-control' type="text" placeholder="Type OptionB">
+        </div>
+        <div class='form-group'>
+            <label for="">OptionC</label>
+            <input id="optionC" class='form-control' type="text" placeholder="Type OptionC">
+        </div>
+        <div class='form-group'>
+            <label for="">OptionD</label>
+            <input id="optionD" class='form-control' type="text" placeholder="Type OptionD">
+        </div>
+        <div class='form-group'>
+            <label for="">Right Ans</label>
+            <input id="rans" class='form-control' type="text" placeholder="Type Right Ans">
+        </div>
+        <div class='form-group'>
+            <label for="">Score</label>
+            <input id="score" class='form-control' type="range" min="1" max="10" value="1">
+        </div>
+        <div class='form-group'>
+            <button id='add' class='btn btn-primary'>Add</button>
+            <button class='btn btn-danger'>Delete</button>
+            <button class='btn btn-info'>Search</button>
+            <button class='btn btn-secondary'>Update</button>
+            <button class='btn btn-success'>Save</button>
+            <button class='btn btn-warning'>Load</button>
+            <button class='btn btn-secondary'>Clear All</button>
+            <button class='btn btn-info'>Sort</button>
+            <button class='btn btn-success'>Save to Server</button>
+            <button class='btn btn-secondary'>Fetch From Server</button>
+        </div>
+        <div>
+            <table class='table table-bordered'>
+                <thead class='thead-dark'>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>OptionA</th>
+                        <th>OptionB</th>
+                        <th>OptionC</th>
+                        <th>OptionD</th>
+                        <th>Rans</th>
+                        <th>Score</th>
+                        <th>Operations</th>
+                    </tr>
+                </thead>
+                <tbody id='questions'>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

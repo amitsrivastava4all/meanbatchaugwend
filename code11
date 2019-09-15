@@ -1,0 +1,39 @@
+class Student{
+	constructor(id, name, marks){
+	this.id = id;
+	this.name = name;
+	this.marks = marks;
+}
+}
+var ram = new Student(10, "Ram",99);
+var shyam = new Student(11, "Shyam",89);
+undefined
+var maths  ={
+sin(){
+},
+cos(){
+}
+} 
+undefined
+typeof maths;
+"object"
+typeof ram;
+"object"
+ram instanceof Student;
+true
+maths instanceof Object;
+true
+var e = {id:1,name:'Ram',phones:[2222,334]};
+undefined
+var img = document.createElement("img");
+undefined
+img;
+<img>​
+typeof img;
+"object"
+img.src="https://cdn1.iconfinder.com/data/icons/hawcons/32/699013-icon-27-trash-can-128.png"
+"https://cdn1.iconfinder.com/data/icons/hawcons/32/699013-icon-27-trash-can-128.png"
+img;
+<img src=​"https:​/​/​cdn1.iconfinder.com/​data/​icons/​hawcons/​32/​699013-icon-27-trash-can-128.png">​
+document.body.appendChild(img);
+<img src=​"https:​/​/​cdn1.iconfinder.com/​data/​icons/​hawcons/​32/​699013-icon-27-trash-can-128.png">​
