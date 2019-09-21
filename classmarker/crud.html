@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CRUD Teacher</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/design.css">
     <script src="js/teachers/models/question.js"></script>
+    <script src="js/teachers/models/questionoperations.js"></script>
     <script src="js/teachers/controllers/ctrl.js"></script>
 </head>
 <body>
@@ -44,13 +46,14 @@
             <label for="">Score</label>
             <input id="score" class='form-control' type="range" min="1" max="10" value="1">
         </div>
+        <h2>Total Records <span id='total'></span> Mark Records <span id='mark'></span> UnMark Records <span id='unmark'></span></h2>
         <div class='form-group'>
             <button id='add' class='btn btn-primary'>Add</button>
-            <button class='btn btn-danger'>Delete</button>
+            <button id='delete' class='btn btn-danger'>Delete</button>
             <button class='btn btn-info'>Search</button>
             <button class='btn btn-secondary'>Update</button>
-            <button class='btn btn-success'>Save</button>
-            <button class='btn btn-warning'>Load</button>
+            <button class='btn btn-success' id='save'>Save</button>
+            <button class='btn btn-warning' id='load'>Load</button>
             <button class='btn btn-secondary'>Clear All</button>
             <button class='btn btn-info'>Sort</button>
             <button class='btn btn-success'>Save to Server</button>
@@ -71,7 +74,9 @@
                         <th>Operations</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody id='questions'>
+
+                </tbody>
             </table>
         </div>
     </div>

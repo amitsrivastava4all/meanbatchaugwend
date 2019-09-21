@@ -8,5 +8,9 @@ class Question{
         this.optionD = optionD;
         this.rans = rans;
         this.score = score;
+        this.isMarked = false;
+    }
+    toggle(){
+        this.isMarked = !this.isMarked;
     }
 }
