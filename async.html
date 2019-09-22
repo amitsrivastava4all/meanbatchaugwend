@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //window.addEventListener('load',heavy);
+        var counter = 0;
+        function light(){
+            console.log('Light Start');
+            counter++;
+            document.querySelector('#light').innerText = counter;
+        }
+        function success(data){
+            console.log('data rec from Heavy (timeout) ',data);
+            document.querySelector('#heavy').innerText = data;
+        }
+        function error(err){
+            console.log('fail after 7 sec ',err);
+        }
+        function callHeavy(){
+           // var t = heavy();
+           heavy(success,error);
+            //console.log('T is ',t);
+        }
+    function heavy(fn, fail){
+        setTimeout(()=>{
+            console.log('Heavy Start');
+        for(let i = 1; i<=100000; i++){
+            for(let j = 1; j<=100000; j++){
+                    if(i == 100000){
+                        fail("Reach to i value");
+                    }
+            }
+        }
+        console.log('Heavy End');
+        //return "Hello I am Back";
+        fn("Hello I am Back");
+        },7000)
+        
+        document.querySelector('#heavy').innerText = "Heavy Ends";
+    }
+    </script>
+</head>
+<body>  
+    <p id='heavy'></p>
+    <button onclick="callHeavy()">Heavy</button>
+    <button onclick="light()">Light</button>
+    <p>Light Task <span id='light'></span></p>
+</body>
+</html>
