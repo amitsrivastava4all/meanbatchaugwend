@@ -1,0 +1,178 @@
+console.log("Start ");
+setTimeout(()=>{
+console.log("Time Out Call ");
+},3000);
+console.log("End ");
+VM217:1 Start 
+VM217:5 End 
+undefined
+VM217:3 Time Out Call 
+function callBack(result){
+console.log('Result is ',result);
+}
+console.log("Start ");
+show(callBack);
+console.log("End ");
+function show(fn){
+setTimeout(()=>{
+console.log("Time Out Call ");
+fn('I am Done ');
+},3000);
+}
+VM481:4 Start 
+VM481:6 End 
+undefined
+VM481:9 Time Out Call 
+VM481:2 Result is  I am Done 
+function show(){
+var pr= new Promise((resolve, reject)=>{
+setTimeout(()=>{
+let result = "Send it back this result after 3 sec ";
+resolve(result);
+},3000);
+});
+return pr;
+
+}
+console.log("Start ");
+var p = show();
+console.log('Promise is ',p);
+p.then(data=>{
+console.log('Data is ',data);
+}).catch(err=>{
+console.log('Err is ',err);
+});
+console.log("I am Done ");
+VM1189:11 Start 
+VM1189:13 Promise is  Promise {<pending>}
+VM1189:19 I am Done 
+undefined
+VM1189:15 Data is  Send it back this result after 3 sec 
+fetch
+ƒ fetch() { [native code] }
+function cube(num){
+var pr = new Promise((resolve, reject)=>{
+	setTimeout(()=>{
+		resolve(num**3);
+});
+}, 5000);
+return pr;
+}
+Promise.all([cube(3), cube(5), cube(2)]).then(resultArr=>{
+let sum = 0;
+resultArr.forEach(data=>sum+=data);
+console.log("Sum is ",sum);
+}).catch(err=>console.log('Error is ',err));
+Promise {<pending>}
+VM1879:12 Sum is  160
+function cube(num){
+var pr = new Promise((resolve, reject)=>{
+	setTimeout(()=>{
+		resolve(num**3);
+},5000);
+});
+return pr;
+}
+Promise.all([cube(3), cube(5), cube(2)]).then(resultArr=>{
+let sum = 0;
+resultArr.forEach(data=>sum+=data);
+console.log("Sum is ",sum);
+}).catch(err=>console.log('Error is ',err));
+Promise {<pending>}
+VM1908:12 Sum is  160
+function cube(num){
+var pr = new Promise((resolve, reject)=>{
+	setTimeout(()=>{
+	if(num==2){
+	reject('Fail due to 2 ');
+}
+		resolve(num**3);
+},5000);
+});
+return pr;
+}
+Promise.all([cube(3), cube(5), cube(2)]).then(resultArr=>{
+let sum = 0;
+resultArr.forEach(data=>sum+=data);
+console.log("Sum is ",sum);
+}).catch(err=>console.log('Error is ',err));
+Promise {<pending>}
+VM1961:16 Error is  Fail due to 2 
+async function test(){
+return 1000;
+}
+undefined
+var t = test();
+undefined
+t;
+Promise {<resolved>: 1000}
+function cube(num){
+
+	setTimeout(()=>{
+		return num**3;
+});
+}, 5000);
+
+}
+
+VM2093:6 Uncaught SyntaxError: Unexpected token ','
+function cube(num){
+
+	setTimeout(()=>{
+		return num**3;
+},5000);
+
+
+}
+
+undefined
+var t = cube(3);
+undefined
+t;
+undefined
+async function cube(num){
+var pr = new Promise((resolve, reject)=>{
+	setTimeout(()=>{
+	
+		resolve(num**3);
+},5000);
+});
+return pr;
+}
+function compute(){
+console.log("Before T ");
+var t =await cube(3);
+console.log("After T ",t);
+ var m = await cube(t);
+console.log("After M ",m);
+ var n = await cube(m);
+console.log("After n ",n);
+
+}
+VM2370:12 Uncaught SyntaxError: await is only valid in async function
+async function cube(num){
+var pr = new Promise((resolve, reject)=>{
+	setTimeout(()=>{
+	
+		resolve(num**3);
+},5000);
+});
+return pr;
+}
+async function compute(){
+console.log("Before T ");
+var t =await cube(3);
+console.log("After T ",t);
+ var m = await cube(t);
+console.log("After M ",m);
+ var n = await cube(m);
+console.log("After n ",n);
+
+}
+undefined
+compute();
+VM2383:11 Before T 
+Promise {<pending>}
+VM2383:13 After T  27
+VM2383:15 After M  19683
+VM2383:17 After n  7625597484987
