@@ -1,0 +1,32 @@
+var obj = {"kind":"analytics#gaData","id":"https://www.googleapis.com/analytics/v3/data/ga?ids=ga:189319674&metrics=ga:users,ga:newUsers,ga:sessions,ga:sessionsPerUser,ga:pageviews,ga:pageviewsPerSession,ga:bounceRate,ga:sessionDuration&start-date=2019-10-06&end-date=2019-10-13","query":{"start-date":"2019-10-06","end-date":"2019-10-13","ids":"ga:189319674","metrics":["ga:users","ga:newUsers","ga:sessions","ga:sessionsPerUser","ga:pageviews","ga:pageviewsPerSession","ga:bounceRate","ga:sessionDuration"],"start-index":1,"max-results":1000},"itemsPerPage":1000,"totalResults":1,"selfLink":"https://www.googleapis.com/analytics/v3/data/ga?ids=ga:189319674&metrics=ga:users,ga:newUsers,ga:sessions,ga:sessionsPerUser,ga:pageviews,ga:pageviewsPerSession,ga:bounceRate,ga:sessionDuration&start-date=2019-10-06&end-date=2019-10-13","profileInfo":{"profileId":"189319674","accountId":"133871515","webPropertyId":"UA-133871515-1","internalWebPropertyId":"193790725","profileName":"All Web Site Data","tableId":"ga:189319674"},"containsSampledData":false,"columnHeaders":[{"name":"ga:users","columnType":"METRIC","dataType":"INTEGER"},{"name":"ga:newUsers","columnType":"METRIC","dataType":"INTEGER"},{"name":"ga:sessions","columnType":"METRIC","dataType":"INTEGER"},{"name":"ga:sessionsPerUser","columnType":"METRIC","dataType":"FLOAT"},{"name":"ga:pageviews","columnType":"METRIC","dataType":"INTEGER"},{"name":"ga:pageviewsPerSession","columnType":"METRIC","dataType":"FLOAT"},{"name":"ga:bounceRate","columnType":"METRIC","dataType":"PERCENT"},{"name":"ga:sessionDuration","columnType":"METRIC","dataType":"TIME"}],"totalsForAllResults":{"ga:users":"4232","ga:newUsers":"3452","ga:sessions":"5287","ga:sessionsPerUser":"1.2492911153119093","ga:pageviews":"15268","ga:pageviewsPerSession":"2.8878380934367316","ga:bounceRate":"51.01191602042746","ga:sessionDuration":"831929.0"},"rows":[["4232","3452","5287","1.2492911153119093","15268","2.8878380934367316","51.01191602042746","831929.0"]]};
+undefined
+typeof obj;
+"object"
+obj;
+{kind: "analytics#gaData", id: "https://www.googleapis.com/analytics/v3/data/ga?id…uration&start-date=2019-10-06&end-date=2019-10-13", query: {…}, itemsPerPage: 1000, totalResults: 1, …}columnHeaders: (8) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]containsSampledData: falseid: "https://www.googleapis.com/analytics/v3/data/ga?ids=ga:189319674&metrics=ga:users,ga:newUsers,ga:sessions,ga:sessionsPerUser,ga:pageviews,ga:pageviewsPerSession,ga:bounceRate,ga:sessionDuration&start-date=2019-10-06&end-date=2019-10-13"itemsPerPage: 1000kind: "analytics#gaData"profileInfo: {profileId: "189319674", accountId: "133871515", webPropertyId: "UA-133871515-1", internalWebPropertyId: "193790725", profileName: "All Web Site Data", …}query: {start-date: "2019-10-06", end-date: "2019-10-13", ids: "ga:189319674", metrics: Array(8), start-index: 1, …}rows: [Array(8)]selfLink: "https://www.googleapis.com/analytics/v3/data/ga?ids=ga:189319674&metrics=ga:users,ga:newUsers,ga:sessions,ga:sessionsPerUser,ga:pageviews,ga:pageviewsPerSession,ga:bounceRate,ga:sessionDuration&start-date=2019-10-06&end-date=2019-10-13"totalResults: 1totalsForAllResults: {ga:users: "4232", ga:newUsers: "3452", ga:sessions: "5287", ga:sessionsPerUser: "1.2492911153119093", ga:pageviews: "15268", …}__proto__: Object
+obj.totalsForAllResults;
+{ga:users: "4232", ga:newUsers: "3452", ga:sessions: "5287", ga:sessionsPerUser: "1.2492911153119093", ga:pageviews: "15268", …}ga:bounceRate: "51.01191602042746"ga:newUsers: "3452"ga:pageviews: "15268"ga:pageviewsPerSession: "2.8878380934367316"ga:sessionDuration: "831929.0"ga:sessions: "5287"ga:sessionsPerUser: "1.2492911153119093"ga:users: "4232"__proto__: Object
+for(let key in obj.totalsForAllResults){
+console.log(key);
+}
+VM249:2 ga:users
+VM249:2 ga:newUsers
+VM249:2 ga:sessions
+VM249:2 ga:sessionsPerUser
+VM249:2 ga:pageviews
+VM249:2 ga:pageviewsPerSession
+VM249:2 ga:bounceRate
+VM249:2 ga:sessionDuration
+undefined
+for(let key in obj.totalsForAllResults){
+console.log(key + " " + obj.totalsForAllResults[key]);
+}
+VM298:2 ga:users 4232
+VM298:2 ga:newUsers 3452
+VM298:2 ga:sessions 5287
+VM298:2 ga:sessionsPerUser 1.2492911153119093
+VM298:2 ga:pageviews 15268
+VM298:2 ga:pageviewsPerSession 2.8878380934367316
+VM298:2 ga:bounceRate 51.01191602042746
+VM298:2 ga:sessionDuration 831929.0
+undefined

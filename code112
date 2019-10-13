@@ -1,0 +1,210 @@
+function show(){
+console.log("I am Show ");
+}
+undefined
+console.dir(show);
+VM608:1 ƒ show()arguments: nullcaller: nulllength: 0name: "show"prototype: {constructor: ƒ}__proto__: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()__proto__: Object[[FunctionLocation]]: <unknown>[[Scopes]]: Scopes[0][[FunctionLocation]]: VM555:1[[Scopes]]: Scopes[1]
+undefined
+this;
+Window {parent: Window, postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, …}
+window;
+Window {parent: Window, postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, …}
+this == window;
+true
+show();
+VM555:2 I am Show 
+undefined
+window.show();
+VM555:2 I am Show 
+undefined
+function show(){
+console.log("I am Show ",this);
+}
+undefined
+show();
+VM883:2 I am Show  Window {parent: Window, postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, …}
+undefined
+var obj = {name:'Amit'};
+undefined
+var name = 'Amit';
+undefined
+window.name;
+"Amit"
+var name = 'Ram';
+undefined
+window.name;
+"Ram"
+window.obj.name;
+"Amit"
+function whoAmI(){
+console.log("My Name is  ",this.name);
+}
+undefined
+whoAmI();
+VM1150:2 My Name is   Ram
+undefined
+window.whoAmI();
+VM1150:2 My Name is   Ram
+undefined
+var fn = whoAmI.bind(obj);
+undefined
+fn();
+VM1150:2 My Name is   Amit
+undefined
+whoAmI();
+VM1150:2 My Name is   Ram
+undefined
+function test(x,y,z,a,b,c){
+console.log('I am Test ');
+console.log(x , y , z , a, b, c);
+console.log(this.name);
+}
+undefined
+test.call(obj,10,20,30,40,50,60);
+VM1479:2 I am Test 
+VM1479:3 10 20 30 40 50 60
+VM1479:4 Amit
+undefined
+var r = [10,20,30,40,50,60];
+undefined
+test.apply(this,r);
+VM1479:2 I am Test 
+VM1479:3 10 20 30 40 50 60
+VM1479:4 Ram
+undefined
+function add(x,y){
+return x + y;
+}
+undefined
+const add1 = (x,y)=>x+y;
+undefined
+var obj = {
+arr :[10,2,9,11,22],
+even:[],
+evenOdd(){
+this.arr.forEach(function(ele){
+if(ele%2==0){
+this.even.push(ele);
+}
+})
+}
+}
+undefined
+obj.evenOdd();
+VM2061:7 Uncaught TypeError: Cannot read property 'push' of undefined
+    at <anonymous>:7:11
+    at Array.forEach (<anonymous>)
+    at Object.evenOdd (<anonymous>:5:10)
+    at <anonymous>:1:5
+(anonymous) @ VM2061:7
+evenOdd @ VM2061:5
+(anonymous) @ VM2093:1
+var obj = {
+arr :[10,2,9,11,22],
+even:[],
+evenOdd(){
+var that = this;
+this.arr.forEach(function(ele){
+if(ele%2==0){
+that.even.push(ele);
+}
+})
+}
+}
+undefined
+obj.evenOdd();
+undefined
+obj.even;
+(3) [10, 2, 22]
+var obj = {
+arr :[10,2,9,11,22],
+even:[],
+evenOdd(){
+
+this.arr.forEach(ele=>{
+if(ele%2==0){
+this.even.push(ele);
+}
+})
+}
+}
+undefined
+obj.evenOdd();
+undefined
+obj.even;
+(3) [10, 2, 22]
+const w = 1000;
+undefined
+w++;
+VM2335:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:2
+(anonymous) @ VM2335:1
+const r = [10,20,30];
+VM2373:1 Uncaught SyntaxError: Identifier 'r' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM2373:1
+const r1 = [10,20,30];
+undefined
+r1 = [];
+VM2400:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:4
+(anonymous) @ VM2400:1
+r1[0] = 999;
+999
+r1;
+(3) [999, 20, 30]
+const obj = {}
+VM2481:1 Uncaught SyntaxError: Identifier 'obj' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM2481:1
+const obj2 = {}
+undefined
+obj2.x = 999;
+999
+obj2;
+{x: 999}
+function test(...q){
+console.log(q.length);
+}
+undefined
+test()
+VM2660:2 0
+undefined
+test(10,20);
+VM2660:2 2
+undefined
+test(1,2,3);
+VM2660:2 3
+undefined
+var w = [10,20,30];
+VM2780:1 Uncaught SyntaxError: Identifier 'w' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM2780:1
+var w3 = [10,20,30];
+undefined
+var w4 = [90,100];
+undefined
+var mm= [...w3, ...w4];
+undefined
+mm;
+(5) [10, 20, 30, 90, 100]
+var t2= {id:1001, name:'Ram'};
+undefined
+var t2 = {id:1002, salary:9999};
+undefined
+var t3 = {id:1002, salary:9999};
+undefined
+var t2= {id:1001, name:'Ram'};
+undefined
+var t4 = {...t2, ...t3};
+undefined
+t4;
+{id: 1002, name: "Ram", salary: 9999}
+var obj = {id:1001, name:'Ram',salary:99999, address:'Delhi'};
+undefined
+var {id , address} = obj;
+undefined
+id;
+1001
+address;
+"Delhi"

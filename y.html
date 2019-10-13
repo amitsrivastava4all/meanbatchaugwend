@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    function clearAll(){
+        var arr = document.querySelectorAll('input');
+        console.log(arr);
+        arr.forEach(txt=>txt.value='');
+        //var arr = document.getElementsByTagName('input');
+        //console.log(arr);
+        //Array.prototype.forEach.apply(arr,[txt=>txt.value='']);
+        //Array.prototype.forEach.call(arr,txt=>txt.value='');
+        //var fn = Array.prototype.forEach.bind(arr); // binding
+        //fn(txt=>txt.value=''); // calling
+        //arr.forEach(txt=>txt.value='');
+    }
+    </script>
+</head>
+<body>
+    <input type="text">
+    <br>
+    <input type="text">
+    <br>
+    <input type="text">
+    <br>
+    <input type="text">
+    <br>
+    <input type="text">
+    <br>
+    <button onclick="clearAll()">Clear All</button>
+</body>
+</html>
