@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="libs/angular.min.js"></script>
+    <style>
+        .size{
+            width: 100px;
+            height: 100px;;
+        }
+    .red{
+        color:red;
+    }
+    .green{
+        color:green;
+    }
+    </style>
+</head>
+<body ng-app>
+    <p>Mobile are </p>
+    <select ng-model="sortby">
+        <option >select sort</option>
+        <option value="price">By price</option>
+        <option value="name">By name</option>
+    </select>
+    <input type="checkbox" ng-model="order"> Asc/ Desc
+    <input type="text" placeholder="Type to Search Anything" ng-model="searchtxt.price">
+    <ul ng-init='mobiledata={"mobiles":[{"id":1001,"name":"Samsung Mobile","price":30000,"url":"http://c2c.sulekhalive.com/lcproducts/mobiles/images/samsung/album/large/samsung-z3(2).jpg"},{"id":1002,"name":"Apple Mobile","price":40000,"url":"https://4.imimg.com/data4/LY/WP/GLADMIN-8934545/apple-mobiles-500x500.jpg"},{"id":1003,"name":"Lg Mobile","price":20000,"url":"http://www.lg.com/uk/images/mobile-phones/MD05609550/stylus-350.jpg"},{"id":1004,"name":"MI Mobile","price":10000,"url":"https://www.91-img.com/pictures/xiaomi-mi-5s-mobile-phone-large-1.jpg"}]}'>
+        <li ng-repeat="mobile in mobiledata['mobiles']|filter:searchtxt|orderBy:sortby:order"><p ng-class="{'red':mobile.price<=20000,'green':mobile.price>20000}">
+            {{mobile.name}} {{mobile.price|currency:'&#8377;'}}
+        </p>
+            <img class="size" ng-src="{{mobile.url}}">
+        </li> 
+    </ul>
+    <br>
+    <ul ng-init="fruits=['Apple','Orange','Kiwi']">
+        <li ng-repeat="fruit in fruits">
+            <div ng-class="{'red':fruit=='Apple','green':fruit!='Apple'}" ng-if="fruit=='Apple'">
+                 <b> This is   {{fruit}}</b>
+            </div>
+            <div ng-class="{'red':fruit=='Apple','green':fruit!='Apple'}" ng-if="fruit!='Apple'">
+                  <i>  That is {{fruit}}</i>
+              </div>
+           
+        </li>
+    </ul>
+    <input type="checkbox" ng-model="onoff">On/Off
+    <br>
+    {{onoff}}
+    <div ng-show="onoff">
+    <input ng-model="myname" type="text" placeholder="Type Your Name">
+    <p>Your Name is {{myname|uppercase}}</p>
+    <br>
+    <input ng-init="pr=0" ng-model="pr" type="text" placeholder="Type Price Here">
+    <input ng-init="qt=0" ng-model="qt" type="text" placeholder="Type QT Here">
+        <p>Amount is {{pr*qt|currency:'&#8377;'}}</p>
+</div>
+    
+</body>
+</html>
