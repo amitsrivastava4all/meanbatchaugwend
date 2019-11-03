@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MVC DEMO</title>
+    <script src="libs/angular.min.js"></script>
+    <script src="js/logic.js"></script>
+    <script src="js/app2.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/customfilter.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/controller.js"></script>
+</head>
+<body ng-app='myapp' >
+    <div ng-controller="myctrl">
+    <input type="text" ng-model="first" placeholder="Type First Number">
+    <input type="text" ng-model="second" placeholder="Type Second Number">
+    <br>
+    <!-- Sum is {{output|resultformatter}}  -->
+    {{output}}
+    <button ng-click="add()">Add</button>
+</div>
+</body>
+</html>

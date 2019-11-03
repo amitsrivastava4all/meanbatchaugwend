@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MVC DEMO</title>
+    <script src="libs/angular.min.js"></script>
+    <script>
+    const app = angular.module('myapp',[]);
+    app.controller('myctrl',($scope, myfactory)=>{
+        $scope.add=()=>{
+          let result = myfactory.add($scope.first, $scope.second);
+          // let result =  parseInt($scope.first) + parseInt($scope.second);
+            $scope.output = result;
+        }
+    })
+    app.factory('myfactory',()=>{
+        return calcLogic;
+    })
+    const calcLogic =  {
+            add(first, second){
+                let result =  parseInt(first) + parseInt(second);
+                return result;
+            }
+        }
+    </script>
+</head>
+<body ng-app='myapp' >
+    <div ng-controller="myctrl">
+    <input type="text" ng-model="first" placeholder="Type First Number">
+    <input type="text" ng-model="second" placeholder="Type Second Number">
+    <br>
+    Sum is {{output}} 
+    <button ng-click="add()">Add</button>
+</div>
+</body>
+</html>

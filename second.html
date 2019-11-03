@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .red{
+        background-color:red;
+    }
+    .yellow{
+        background-color:yellow;
+    }
+    </style>
+    <script src="libs/angular.min.js">
+    
+    </script>
+</head>
+<body ng-app>
+    <a ng-href=""></a>
+    <button ng-disabled="tick">Accept</button>
+    Drop Down is 
+    <select ng-model="c" >
+        <option >India</option>
+        <option ng-selected="tick">USA</option>
+    </select>
+    <input type="checkbox" ng-model="tick" ng-init="tick=false">
+   {{tick}}
+    <input type="text" ng-model="name">
+    <textarea ng-model="design" cols="30" rows="10"></textarea>
+    <br>
+    Design <div ng-bind-html="design"></div>
+    <br>
+    <div ng-if="tick">
+    <p>Your Name is {{name}}</p>
+    <p ng-bind-template=`<span> Your Name is {{name}}</span>`></p>
+    <p>Your Name is <span ng-bind="name"></span></p>
+      <table border="1">
+          <tr ng-class-even="'red'" ng-class-odd="'yellow'" ng-repeat="x in [10,20,21,22,23,24,25]|limitTo:2:2">
+            <td>{{x}} <span ng-style="{'color':x>20?'blue':'green'}"></span></td>
+          </tr>
+      </table>  
+      {{10000000|number}}
+
+</div>
+</body>
+</html>
