@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="libs/angular.min.js"></script>
+    <script src="js/custom.js"></script>
+</head>
+<body ng-app="myapp">
+    <h1>Factory Sharing</h1>
+        <div ng-controller="myctrl5">
+                <input type="text" ng-model="mydata" ng-keyup="takeData()" placeholder="Type Name Here" ng-model="data">
+        </div>
+
+        <div ng-controller="myctrl6">
+            <button ng-click="giveMeData()">Fetch</button>
+               <p>Result is {{result}}</p>
+        </div>
+        <h2>Parent Child (Inheritance) Sharing</h2>
+        <div ng-controller="myctrl3">
+                <input type="text" placeholder="Type Name Here" ng-model="data">
+        <div ng-controller="myctrl4">
+            <p>Result is {{data}}</p>
+        </div>
+            </div>
+            <h3>RootScope Sharing</h3>
+    <div ng-controller="myctrl">
+        <input type="text" placeholder="Type Name Here" ng-model="data">
+        <button ng-click="shareIt()">Data Share</button>
+    </div>
+    <div  ng-controller="myctrl2">
+        <p>Second Div</p>
+        <p>Data Rec is {{result}}</p>
+
+    </div>
+    
+</body>
+</html>

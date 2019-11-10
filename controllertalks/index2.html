@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="libs/angular.min.js"></script>
+    <script src="js/logic.js"></script>
+</head>
+<body ng-app="myapp">
+    <div ng-controller="myctrl1">
+        Child DATA REC IS {{result2}}
+        <br>
+        <input ng-keyup="shareIt()" type="text" placeholder="Share Name" ng-model="data">
+        <div ng-controller="myctrl2"> Result is {{result}}
+            <input ng-keyup="shareItToParent()" type="text" placeholder="Share to Parent" ng-model="childdata">
+
+        </div>
+        <div ng-controller="myctrl3"> Result is {{result}}</div>
+    </div>
+    
+</body>
+</html>
