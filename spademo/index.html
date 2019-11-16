@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Page</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="routes/routing.js"></script>
+    <script src="js/controllers/contactus.js"></script>
+</head>
+<body ng-app='myapp'>
+    <div class='container'>
+        <input type="text" placeholder="Type Data here" ng-model="mydata">
+        <h2 class='alert-success text-center'>SPA Demo</h2>
+        <a ng-href="#/">Home</a>
+        <a ng-href="#/about">About Us</a>
+        <a ng-href="#/contact/{{mydata}}">Contact Us</a>
+
+        <br>
+        <hr>
+        <ng-view></ng-view>
+       
+
+    </div>   
+</body>
+</html>
