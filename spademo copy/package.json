@@ -1,0 +1,16 @@
+{
+  "name": "spademo",
+  "version": "1.0.0",
+  "description": "this is a spa demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "amit",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.7.8",
+    "angular-route": "^1.7.8",
+    "bootstrap": "^4.3.1"
+  }
+}

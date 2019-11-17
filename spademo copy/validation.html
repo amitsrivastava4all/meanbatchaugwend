@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Validations</title>
+    <style>
+        input.ng-valid{
+            border-color:green;
+        }
+        input.ng-invalid{
+            border-color: red;
+        }
+    .red{
+        color:red;
+    }
+    </style>
+    <script src="./node_modules/angular/angular.min.js"></script>
+    <script>
+    const app = angular.module("myapp",[]);
+    app.controller("myctrl",function($scope){
+        $scope.result = '';
+        $scope.checkForm = function(form1){
+            console.log(form1);
+            if(form1.$invalid){
+                $scope.result = "Form is Invalid";
+            }
+            else{
+                $scope.result = "Form is Valid";
+            }
+        }
+    })
+    </script>
+</head>
+<body ng-app="myapp" ng-controller="myctrl">
+    Result is {{result}}
+    <form ng-submit="checkForm(form1)" name="form1"  novalidate>
+        <input ng-model="cname" name="cname" type="text" pattern="[a-z]{3,10}" title="Name should be b/w 3 to 10 chars" placeholder="Type Name Here" required>
+        <p class='red' ng-show="form1.cname.$touched && form1.cname.$invalid && form1.cname.$error['required']">Customer name can't be blank</p>
+        <p class='red' ng-show="form1.cname.$touched && form1.cname.$invalid && form1.cname.$error['pattern']">Customer name should be b/w 3 to 10 chars</p>
+        <p>Name is {{form1.cname}}</p>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
