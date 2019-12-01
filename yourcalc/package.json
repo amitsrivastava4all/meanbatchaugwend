@@ -1,0 +1,19 @@
+{
+  "name": "yourcalc",
+  "version": "1.0.0",
+  "description": "this is a sample calc",
+  "main": "index.js",
+  "scripts": {
+    "qct":"node call.js",
+    "uat":"node call.js",
+    "prod":"node call.js",
+    "dev":"node call.js",
+    "start":"node call.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "calc"
+  ],
+  "author": "amit",
+  "license": "ISC"
+}

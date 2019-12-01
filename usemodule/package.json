@@ -1,0 +1,16 @@
+{
+  "name": "usemodule",
+  "version": "1.0.0",
+  "description": "",
+  "main": "caller.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "yourcalc": "^1.0.0"
+  }
+}
