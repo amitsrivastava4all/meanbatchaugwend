@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+
+    <meta charset="UTF-8">
+    <title>Server Sent Events - client !12345 </title>
+    <style>
+        .highlight {
+            color: red;
+            font-weight: bold;
+            font-style: italic;
+        }
+    </style>
+
+    <script>
+        window.addEventListener("load", init);
+        var esConnection = null;
+
+        function init() {
+            var btnConnect = document.getElementById("btnConnect");
+            btnConnect.addEventListener("click", onBtnConnectClick);
+        }
+
+        function onBtnConnectClick() {
+            esConnection = new EventSource('./stream');
+            console.log("Connection is ", esConnection);
+            // esConnection.addEventListener('message', onMessageFromServer);
+            // Here we register the event
+            esConnection.addEventListener('letdoservertalk', onFileChangeMessageFromServer);
+        }
+
+        function onMessageFromServer(evtArg) {
+            document.getElementById("divMessages").innerHTML += '<div> Message is' + evtArg.mymessage + '</div>';
+            console.log("ON Message From Server Call ", evtArg);
+        }
+
+
+        function onFileChangeMessageFromServer(evtArg) {
+            console.log("--------  Event Value is ::-----:: ", evtArg);
+
+            // var json = JSON.stringify(evtArg);
+            // console.log("JSON is ", json);
+
+            document.getElementById("divMessages").innerHTML += '<div class="highlight"> File Change Happens' +
+                evtArg.data + '</div>';
+            //window.location.reload();
+        }
+        // Call me call
+        function callMe(event) {
+            console.log("Event Fire ", event.target.value);
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Event Funda...!!!!</h2>
+    <input type="text" onkeypress="callMe(event)">
+    <h1>Hello- this is the change1</h1>
+    <h1 style="color : blue">Server Sent Events Example !</h1>
+    <input type="button" value="Connect" id="btnConnect">
+    <div id="divMessages"></div>
+</body>
+
+</html>
